@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "리액트",
+      "content": "할만한 줄......",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "title": "리덕스",
+      "content": "울고 말았지......",
+      "isDone": true
+    }
+  ]
+}
