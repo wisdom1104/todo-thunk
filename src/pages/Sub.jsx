@@ -7,7 +7,7 @@ function Sub({ todos }) {
   const subTodo = todos.find((item) => {
     return item.id === Number(param.id);
   });
-  console.log(param);
+  // console.log(param);
   return (
     <StSub>
       <StSubBox>

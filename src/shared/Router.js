@@ -13,7 +13,7 @@ const Router = () => {
     dispatch(__getTodos());
   }, []);
 
-  console.log(todos);
+  // console.log(todos);
   if (isLoading) {
     return <div> 로딩 중... </div>;
   }
