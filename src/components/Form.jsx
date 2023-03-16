@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { StForm, StFormBtn, StInput, StInputBox } from "../GlobalStyles";
-import { AddTodo } from "../redux/modules/todos";
+import { __addTodos, __getTodos } from "../redux/modules/todosSlice";
 
 function Form() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const dispatch = useDispatch();
 
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    await dispatch(__addTodos({ title, content, isDone: false }));
+    await dispatch(__getTodos());
+    setTitle("");
+    setContent("");
+  };
   return (
     <>
-      <StForm
-        onSubmit={(e) => {
-          e.preventDefault();
-          dispatch(AddTodo({ title, content }));
-          setTitle("");
-          setContent("");
-        }}
-      >
+      <StForm onSubmit={onSubmitHandler}>
         <StInputBox>
           <span>제목: </span>
           <StInput

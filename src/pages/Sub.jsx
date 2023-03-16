@@ -1,12 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { StSub, StSubBox, StSubBoxText } from "../GlobalStyles";
 
-function Sub() {
-  const todo = useSelector((state) => state.todos);
+function Sub({ todos }) {
   const param = useParams();
-  const subTodo = todo.find((item) => {
+  const subTodo = todos.find((item) => {
     return item.id === Number(param.id);
   });
   console.log(param);

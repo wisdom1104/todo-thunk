@@ -1,15 +1,12 @@
-import React from "react";
-import { useSelector } from "react-redux";
 import { StTodoPlace } from "../GlobalStyles";
 import TodoBox from "./TodoBox";
 
-function Done() {
-  const todo = useSelector((state) => state.todos);
+function Done({ todos }) {
   return (
     <>
       <h2>Done...</h2>
       <StTodoPlace>
-        {todo.map((item) => {
+        {todos.map((item) => {
           if (item.isDone === true)
             return (
               <div key={item.id}>
